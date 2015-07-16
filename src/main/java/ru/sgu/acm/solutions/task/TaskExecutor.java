@@ -1,8 +1,12 @@
 package ru.sgu.acm.solutions.task;
 
+import com.google.common.base.CharMatcher;
 import org.reflections.Reflections;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
 
 /**
  * User: 1
@@ -10,18 +14,25 @@ import java.util.Map;
  */
 public class TaskExecutor {
 
-    private static Map<Integer, Class> tasksMap;
+    public Map<Integer, Class> tasksMap;
 
     {
+        tasksMap = new HashMap<>();
         Reflections reflections = new Reflections();
-        /*List<Class<? extends Task>> tasks = Arrays.asList(reflections.getSubTypesOf(Task.class).toArray());
-
-        for (int taskIndex = 1; taskIndex < tasks.size(); taskIndex++) {
-
-        }*/
+        Set<Class<? extends Task>> tasks = reflections.getSubTypesOf(Task.class);
+        for (Class<? extends Task> taskClass : tasks) {
+            String taskNumberString =  CharMatcher.inRange('0', '9').retainFrom(taskClass.getName());
+            tasksMap.put(Integer.parseInt(taskNumberString), taskClass);
+        }
     }
 
-    public void executeTaskByNumber(int taskNumber) {
+    public void executeTaskByNumber(Scanner scanner, int taskNumber) throws IllegalAccessException, InstantiationException {
+        Task taskForExecute = (Task) tasksMap.get(taskNumber).newInstance();
+        taskForExecute.initInputData(scanner);
+        writeAnswer(taskForExecute.execute());
+    }
 
+    private void writeAnswer(String answer) {
+        System.out.println(answer);
     }
 }
