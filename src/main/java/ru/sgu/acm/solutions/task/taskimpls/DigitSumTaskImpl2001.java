@@ -8,7 +8,7 @@ import java.util.Scanner;
  * User: 1
  * Date: 16.07.15
  */
-public class DigitSumTaskImpl1 implements Task {
+public class DigitSumTaskImpl2001 implements Task {
 
     @Override
     public String execute() {

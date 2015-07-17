@@ -18,12 +18,13 @@ public class TaskExecutor {
 
     {
         tasksMap = new HashMap<>();
-        Reflections reflections = new Reflections();
-        Set<Class<? extends Task>> tasks = reflections.getSubTypesOf(Task.class);
-        for (Class<? extends Task> taskClass : tasks) {
-            String taskNumberString =  CharMatcher.inRange('0', '9').retainFrom(taskClass.getName());
-            tasksMap.put(Integer.parseInt(taskNumberString), taskClass);
-        }
+        Set<Class<? extends Task>> tasks = new Reflections().getSubTypesOf(Task.class);
+        tasks.forEach(taskClass -> {
+             tasksMap.put(
+                Integer.parseInt(CharMatcher.inRange('0', '9').retainFrom(taskClass.getName())),
+                taskClass
+             );
+        });
     }
 
     public void executeTaskByNumber(Scanner scanner, int taskNumber) throws IllegalAccessException, InstantiationException {
