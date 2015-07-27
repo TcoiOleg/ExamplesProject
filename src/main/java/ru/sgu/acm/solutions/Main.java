@@ -1,6 +1,6 @@
 package ru.sgu.acm.solutions;
 
-import ru.sgu.acm.solutions.task.TaskExecutor;
+import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Main {
 
     public static final Scanner SCANNER = new Scanner(System.in);
-    public static final TaskExecutor TASK_EXECUTOR = new TaskExecutor();
+    public static final TaskExecutor TASK_EXECUTOR = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutor);
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         System.out.println("Enter task number: ");
@@ -22,7 +22,7 @@ public class Main {
         }
         final int taskNumber = Integer.parseInt(taskNumberStr);
         System.out.println("Enter tasks input values: ");
-        TASK_EXECUTOR.executeTaskByNumber(SCANNER, taskNumber);
+        TASK_EXECUTOR.executeTaskByNumber(SCANNER, taskNumber, System.out);
     }
 
     public static boolean tryParse(String str) {

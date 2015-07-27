@@ -1,10 +1,13 @@
-package ru.sgu.acm.solutions.task;
+package ru.sgu.acm.solutions.task.executors.impl;
 
 import com.google.common.base.CharMatcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.reflections.Reflections;
+import ru.sgu.acm.solutions.task.Task;
+import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 
+import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,12 +17,16 @@ import java.util.Set;
  * User: 1
  * Date: 15.07.15
  */
-public class TaskExecutor {
+public class TaskExecutorSOUTImpl extends TaskExecutor {
 
-    public Map<Integer, Class> tasksMap;
-    private static final Logger LOGGER = LogManager.getLogger(TaskExecutor.class);
+    private static final Logger LOGGER = LogManager.getLogger(TaskExecutorSOUTImpl.class);
+    private Map<Integer, Class> tasksMap;
 
-    {
+    public TaskExecutorSOUTImpl() {
+        fillTaskMap();
+    }
+
+    public void fillTaskMap() {
         LOGGER.trace("IN Filling task map.");
         tasksMap = new HashMap<>();
         Set<Class<? extends Task>> tasks = new Reflections().getSubTypesOf(Task.class);
@@ -34,14 +41,10 @@ public class TaskExecutor {
         LOGGER.trace("OUT Filling task map.");
     }
 
-    public void executeTaskByNumber(Scanner scanner, int taskNumber) throws IllegalAccessException, InstantiationException {
+    public void executeTaskByNumber(Scanner scanner, int taskNumber, PrintStream outputStream) throws IllegalAccessException, InstantiationException {
         LOGGER.trace("Execute task: {}", taskNumber);
         Task taskForExecute = (Task) tasksMap.get(taskNumber).newInstance();
         taskForExecute.initInputData(scanner);
-        writeAnswer(taskForExecute.execute());
-    }
-
-    private void writeAnswer(String answer) {
-        System.out.println(answer);
+        outputStream.println(taskForExecute.execute());
     }
 }
