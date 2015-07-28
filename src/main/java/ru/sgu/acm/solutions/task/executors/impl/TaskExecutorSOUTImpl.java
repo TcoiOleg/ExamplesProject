@@ -7,7 +7,6 @@ import org.reflections.Reflections;
 import ru.sgu.acm.solutions.task.Task;
 import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 
-import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -37,10 +36,10 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
         LOGGER.trace("OUT Filling task map.");
     }
 
-    public void executeTaskByNumber(Scanner scanner, int taskNumber, PrintStream outputStream) throws IllegalAccessException, InstantiationException {
+    public void executeTaskByNumber(Scanner scanner, int taskNumber) throws IllegalAccessException, InstantiationException {
         LOGGER.trace("Execute task: {}", taskNumber);
         Task taskForExecute = (Task) tasksMap.get(taskNumber).newInstance();
         taskForExecute.initInputData(scanner);
-        outputStream.println(taskForExecute.execute());
+        System.out.println(taskForExecute.execute());
     }
 }
