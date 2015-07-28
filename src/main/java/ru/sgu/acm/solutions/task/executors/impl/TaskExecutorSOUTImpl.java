@@ -22,10 +22,6 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
     private static final Logger LOGGER = LogManager.getLogger(TaskExecutorSOUTImpl.class);
     private Map<Integer, Class> tasksMap;
 
-    public TaskExecutorSOUTImpl() {
-        fillTaskMap();
-    }
-
     public void fillTaskMap() {
         LOGGER.trace("IN Filling task map.");
         tasksMap = new HashMap<>();

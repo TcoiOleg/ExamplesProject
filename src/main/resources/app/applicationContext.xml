@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- todo: need to fill name of beans through BeansConstants -->
-    <bean name="taskExecutor" class="ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl"/>
+    <bean id="taskExecutor" class="ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl" scope="singleton"
+            init-method="fillTaskMap"/>
 
 </beans>
