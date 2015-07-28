@@ -6,4 +6,5 @@ package ru.sgu.acm.solutions;
  */
 public interface BeanConstants {
     static final String taskExecutor = "taskExecutor";
+    static final String taskExecutorToFile = "taskExecutorToFile";
 }

@@ -7,4 +7,5 @@
     <bean id="taskExecutor" class="ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl" scope="singleton"
             init-method="fillTaskMap"/>
 
+    <import resource="classpath:ru/sgu/acm/solutions/executors/executorsConfiguration.xml"/>
 </beans>

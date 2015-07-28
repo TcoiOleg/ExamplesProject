@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="task1Bean" class="ru.sgu.acm.solutions.task.taskimpls.DigitSumTaskImpl2001"/>
+    <bean id="task2Bean" class="ru.sgu.acm.solutions.task.taskimpls.DigitNSumTaskImpl2002"/>
+    <bean id="task3Bean" class="ru.sgu.acm.solutions.task.taskimpls.AlternateDigitSumTaskImpl2003"/>
+    <bean id="task4Bean" class="ru.sgu.acm.solutions.task.taskimpls.LeapYearTaskImpl2004"/>
+    <bean id="task5Bean" class="ru.sgu.acm.solutions.task.taskimpls.FirstMinIndexTaskImpl2005"/>
+    <bean id="task6Bean" class="ru.sgu.acm.solutions.task.taskimpls.BadenConverterTaskImpl2006"/>
+
+    <bean id="taskExecutorToFile" class="ru.sgu.acm.solutions.task.executors.impl.TaskExecutorToFile">
+        <property name="taskMap">
+            <map>
+                <entry key="task1" value-ref="task1Bean"/>
+                <entry key="task2" value-ref="task2Bean"/>
+                <entry key="task3" value-ref="task3Bean"/>
+                <entry key="task4" value-ref="task4Bean"/>
+                <entry key="task5" value-ref="task5Bean"/>
+                <entry key="task6" value-ref="task6Bean"/>
+            </map>
+        </property>
+        <property name="pathToInput" value="/sdfs"/>
+        <property name="pathToOutput" value="/ds"/>
+    </bean>
+    
+</beans>
