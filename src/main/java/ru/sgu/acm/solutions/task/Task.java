@@ -8,6 +8,7 @@ import java.util.Scanner;
  * User: 1
  * Date: 15.07.15
  */
+// strategy in Template: Strategy
 public interface Task {
 
     List<String> inputData = new ArrayList<>();

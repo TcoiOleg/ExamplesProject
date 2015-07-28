@@ -13,7 +13,9 @@ import java.util.Scanner;
 public class Main {
 
     public static final Scanner SCANNER = new Scanner(System.in);
-    public static final TaskExecutor TASK_EXECUTOR = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutorToFile);
+    public static final TaskExecutor TASK_EXECUTOR = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutor);
+    //public static final TaskExecutor TASK_EXECUTOR = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutorToFile);
+    //public static final TaskExecutor TASK_EXECUTOR = FactoryMethodExample.initFactoryMethod(FactoryMethodExample.TASK_EXECUTORS.SOUT);
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, IOException {
         System.out.println("Enter task number: ");

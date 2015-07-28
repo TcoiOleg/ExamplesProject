@@ -16,6 +16,8 @@ import java.util.Set;
  * User: 1
  * Date: 15.07.15
  */
+
+// context in Template: Strategy
 public class TaskExecutorSOUTImpl extends TaskExecutor {
 
     private static final Logger LOGGER = LogManager.getLogger(TaskExecutorSOUTImpl.class);
@@ -38,6 +40,10 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
 
     public void executeTaskByNumber(Scanner scanner, int taskNumber) throws IllegalAccessException, InstantiationException {
         LOGGER.trace("Execute task: {}", taskNumber);
+        if (tasksMap == null || tasksMap.isEmpty()) {
+            LOGGER.warn("no tasks implementations");
+            fillTaskMap();
+        }
         Task taskForExecute = (Task) tasksMap.get(taskNumber).newInstance();
         taskForExecute.initInputData(scanner);
         System.out.println(taskForExecute.execute());

@@ -11,6 +11,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * User: 1
  * Date: 28.07.15
  */
+
+// adapter for ApplicationContext
 public class TasksContext {
 
     private static final String APP_CONTEXT_PATH = "app/applicationContext.xml";
