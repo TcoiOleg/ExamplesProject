@@ -53,7 +53,6 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
         } catch (IllegalAccessException e) {
             return;
         }
-        taskForExecute.initInputData(scanner);
-        System.out.println(taskForExecute.execute());
+        System.out.println(taskForExecute.execute(scanner));
     }
 }

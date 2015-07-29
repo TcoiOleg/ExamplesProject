@@ -10,13 +10,9 @@ import java.util.Scanner;
  */
 public class BadenConverterTaskImpl2006 implements Task {
     @Override
-    public String execute() {
-        double lengthInCM = Double.parseDouble(inputData.get(0));
+    public String execute(Scanner scanner) {
+        String inputData = scanner.nextLine();
+        double lengthInCM = Double.parseDouble(inputData);
         return String.valueOf((int)(lengthInCM / 36)) + " " + String.valueOf((int)(lengthInCM % 36 / 3));
-    }
-
-    @Override
-    public void initInputData(Scanner scanner) {
-        inputData.add(scanner.nextLine());
     }
 }

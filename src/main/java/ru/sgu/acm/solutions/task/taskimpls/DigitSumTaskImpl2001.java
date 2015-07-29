@@ -11,16 +11,10 @@ import java.util.Scanner;
 public class DigitSumTaskImpl2001 implements Task {
 
     @Override
-    public String execute() {
-        int a = Integer.parseInt(inputData.get(0));
-        int b = Integer.parseInt(inputData.get(1));
-        return String.valueOf(a + b);
-    }
-
-    @Override
-    public void initInputData(Scanner scanner) {
+    public String execute(Scanner scanner) {
         String[] firstSecondDigit = scanner.nextLine().split(" ");
-        inputData.add(firstSecondDigit[0]);
-        inputData.add(firstSecondDigit[1]);
+        int a = Integer.parseInt(firstSecondDigit[0]);
+        int b = Integer.parseInt(firstSecondDigit[1]);
+        return String.valueOf(a + b);
     }
 }

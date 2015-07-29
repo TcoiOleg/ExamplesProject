@@ -16,10 +16,12 @@ public class AlternateDigitSumTaskImpl2003 implements Task {
     private static final Logger LOGGER = LogManager.getLogger(AlternateDigitSumTaskImpl2003.class);
 
     @Override
-    public String execute() {
+    public String execute(Scanner scanner) {
+        scanner.nextLine();
+        String inputData = scanner.nextLine();
         final int[] index = new int[]{0};
         LOGGER.trace("input data: {}", inputData);
-        return String.valueOf(Arrays.asList(inputData.get(0).split(" ")).stream().mapToInt(numberString -> {
+        return String.valueOf(Arrays.asList(inputData.split(" ")).stream().mapToInt(numberString -> {
             LOGGER.trace("parse number: {}", numberString);
             int temp = Integer.parseInt(numberString);
             if (index[0]++ % 2 != 0) {
@@ -28,12 +30,6 @@ public class AlternateDigitSumTaskImpl2003 implements Task {
                 return temp;
             }
         }).sum());
-    }
-
-    @Override
-    public void initInputData(Scanner scanner) {
-        scanner.nextLine();
-        inputData.add(scanner.nextLine());
     }
 
     /*IntStream.range(0, params.size())

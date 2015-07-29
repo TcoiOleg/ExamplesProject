@@ -13,10 +13,12 @@ import java.util.Scanner;
  */
 public class FirstMinIndexTaskImpl2005 implements Task {
     @Override
-    public String execute() {
+    public String execute(Scanner scanner) {
+        scanner.nextLine();
+        String inputData = scanner.nextLine();
         final List<Integer> lst = new ArrayList<>();
         final int[] min = new int[]{1000000, 0, 0}; // min, index, minIndex
-        Arrays.asList(inputData.get(0).split(" ")).forEach(
+        Arrays.asList(inputData.split(" ")).forEach(
                 numberString -> {
                     int temp = Integer.parseInt(numberString);
                     min[1]++;
@@ -28,11 +30,5 @@ public class FirstMinIndexTaskImpl2005 implements Task {
                 }
         );
         return String.valueOf(min[2]);
-    }
-
-    @Override
-    public void initInputData(Scanner scanner) {
-        scanner.nextLine();
-        inputData.add(scanner.nextLine());
     }
 }

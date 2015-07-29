@@ -27,8 +27,7 @@ public class TaskExecutorToFile extends TaskExecutor {
         PrintStream printStream = getPrintStreamFromFile(getPathToOutput());
         LOGGER.trace("Execute task: {}", taskNumber);
         Task task = taskMap.get(String.valueOf(taskNumber));
-        task.initInputData(scanner);
-        printStream.println(task.execute());
+        printStream.println(task.execute(scanner));
     }
 
     public void setTaskMap(Map<String, Task> taskMap) {

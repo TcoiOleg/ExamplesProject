@@ -10,13 +10,9 @@ import java.util.Scanner;
  */
 public class LeapYearTaskImpl2004 implements Task {
     @Override
-    public String execute() {
-        int year = Integer.parseInt(inputData.get(0));
+    public String execute(Scanner scanner) {
+        String inputData = scanner.nextLine();
+        int year = Integer.parseInt(inputData);
         return String.valueOf(((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) ? 1 : 0);
-    }
-
-    @Override
-    public void initInputData(Scanner scanner) {
-        inputData.add(scanner.nextLine());
     }
 }

@@ -11,14 +11,10 @@ import java.util.Scanner;
  */
 public class DigitNSumTaskImpl2002 implements Task {
     @Override
-    public String execute() {
-        return String.valueOf(
-                Arrays.asList(inputData.get(0).split(" ")).stream().mapToInt(Integer::parseInt).sum());
-    }
-
-    @Override
-    public void initInputData(Scanner scanner) {
+    public String execute(Scanner scanner) {
         scanner.nextLine();
-        inputData.add(scanner.nextLine());
+        String inputData = scanner.nextLine();
+        return String.valueOf(
+                Arrays.asList(inputData.split(" ")).stream().mapToInt(Integer::parseInt).sum());
     }
 }

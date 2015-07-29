@@ -1,7 +1,5 @@
 package ru.sgu.acm.solutions.task;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,10 +8,5 @@ import java.util.Scanner;
  */
 // strategy in Template: Strategy
 public interface Task {
-
-    List<String> inputData = new ArrayList<>();
-
-    String execute();
-
-    void initInputData(Scanner scanner);
+    String execute(Scanner scanner);
 }
