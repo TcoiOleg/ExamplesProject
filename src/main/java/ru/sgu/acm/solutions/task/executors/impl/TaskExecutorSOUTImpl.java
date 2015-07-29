@@ -38,13 +38,21 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
         LOGGER.trace("OUT Filling task map.");
     }
 
-    public void executeTaskByNumber(Scanner scanner, int taskNumber) throws IllegalAccessException, InstantiationException {
+    public void executeTaskByNumber(Scanner scanner, int taskNumber) {
         LOGGER.trace("Execute task: {}", taskNumber);
         if (tasksMap == null || tasksMap.isEmpty()) {
             LOGGER.warn("no tasks implementations");
             fillTaskMap();
         }
-        Task taskForExecute = (Task) tasksMap.get(taskNumber).newInstance();
+        Task taskForExecute;
+        try {
+            taskForExecute = (Task) tasksMap.get(taskNumber).newInstance();
+        } catch (InstantiationException e) {
+            LOGGER.error(e.getMessage());
+            return;
+        } catch (IllegalAccessException e) {
+            return;
+        }
         taskForExecute.initInputData(scanner);
         System.out.println(taskForExecute.execute());
     }

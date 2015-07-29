@@ -2,7 +2,7 @@ package ru.sgu.acm.solutions.templates.factorymethod;
 
 import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 import ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl;
-import ru.sgu.acm.solutions.task.executors.impl.TaskExecutorToFile;
+import ru.sgu.acm.solutions.task.executors.impl.file.TaskExecutorToFile;
 
 /**
  * User: 1

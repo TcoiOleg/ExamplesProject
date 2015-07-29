@@ -10,7 +10,7 @@
     <bean id="task5Bean" class="ru.sgu.acm.solutions.task.taskimpls.FirstMinIndexTaskImpl2005"/>
     <bean id="task6Bean" class="ru.sgu.acm.solutions.task.taskimpls.BadenConverterTaskImpl2006"/>
 
-    <bean id="taskExecutorToFile" class="ru.sgu.acm.solutions.task.executors.impl.TaskExecutorToFile">
+    <bean id="taskExecutorToFile" class="ru.sgu.acm.solutions.task.executors.impl.file.TaskExecutorToFile">
         <property name="taskMap">
             <map>
                 <entry key="2001" value-ref="task1Bean"/>
@@ -21,8 +21,7 @@
                 <entry key="2006" value-ref="task6Bean"/>
             </map>
         </property>
-        <property name="pathToInput" value="/sdfs"/>
-        <property name="pathToOutput" value="H:/GitProjects/ExamplesProject/1.txt"/>
+        <property name="pathToOutput" value="/output.txt"/>
     </bean>
     
 </beans>
