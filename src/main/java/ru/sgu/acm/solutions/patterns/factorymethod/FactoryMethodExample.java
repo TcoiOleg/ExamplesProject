@@ -1,4 +1,4 @@
-package ru.sgu.acm.solutions.templates.factorymethod;
+package ru.sgu.acm.solutions.patterns.factorymethod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

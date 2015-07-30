@@ -1,4 +1,4 @@
-package ru.sgu.acm.solutions.templates.factorymethod;
+package ru.sgu.acm.solutions.patterns.factorymethod;
 
 import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 import ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl;

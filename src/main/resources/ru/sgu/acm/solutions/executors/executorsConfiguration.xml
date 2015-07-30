@@ -9,8 +9,9 @@
     <bean id="task4Bean" class="ru.sgu.acm.solutions.task.taskimpls.LeapYearTaskImpl2004"/>
     <bean id="task5Bean" class="ru.sgu.acm.solutions.task.taskimpls.FirstMinIndexTaskImpl2005"/>
     <bean id="task6Bean" class="ru.sgu.acm.solutions.task.taskimpls.BadenConverterTaskImpl2006"/>
+    <bean id="task7Bean" class="ru.sgu.acm.solutions.task.taskimpls.RoundNumbersBinaryTaskImpl2007"/>
 
-    <bean id="taskExecutorToFile" class="ru.sgu.acm.solutions.task.executors.impl.file.TaskExecutorToFile">
+    <bean id="taskExecutorToFile" class="ru.sgu.acm.solutions.task.executors.impl.file.TaskExecutorToFile" lazy-init="true">
         <property name="taskMap">
             <map>
                 <entry key="2001" value-ref="task1Bean"/>
@@ -19,6 +20,7 @@
                 <entry key="2004" value-ref="task4Bean"/>
                 <entry key="2005" value-ref="task5Bean"/>
                 <entry key="2006" value-ref="task6Bean"/>
+                <entry key="2007" value-ref="task7Bean"/>
             </map>
         </property>
         <property name="pathToOutput" value="/output.txt"/>
