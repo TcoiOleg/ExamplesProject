@@ -18,8 +18,8 @@ public class MainLoader {
     static Scanner scanner = new Scanner(System.in);
     static PrintStream out = System.out;
     static TaskExecutor taskExecutor = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutor);
-    //static TaskExecutorBridgePattern taskExecutor = (TaskExecutorBridgePattern) TasksContext.getBean(BeanConstants.taskExecutorToFile);
-    //static TaskExecutorBridgePattern taskExecutor = FactoryMethodExample.initFactoryMethod(FactoryMethodExample.TASK_EXECUTORS.SOUT);
+    //static TaskExecutor taskExecutor = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutorToFile);
+    //static TaskExecutor taskExecutor = FactoryMethodExample.initFactoryMethod(FactoryMethodExample.TASK_EXECUTORS.SOUT);
 
     public static void main(String[] args) {
         //Main main = new MainImplBridge();
