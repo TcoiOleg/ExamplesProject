@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Date: 15.07.15
  */
 // strategy in Template: Strategy
+// bridge in template: bridge via TaskExecutorBridgePattern and Task implementations
 public interface Task {
     String execute(Scanner scanner);
 }

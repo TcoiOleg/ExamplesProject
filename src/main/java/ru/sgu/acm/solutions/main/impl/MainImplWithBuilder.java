@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.sgu.acm.solutions.BeanConstants;
 import ru.sgu.acm.solutions.TasksContext;
+import ru.sgu.acm.solutions.main.Main;
 import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 
 import java.io.PrintStream;
@@ -14,13 +15,14 @@ import java.util.Scanner;
  * Date: 15.07.15
  */
 
-public class Main {
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+public class MainImplWithBuilder implements Main {
+    private static final Logger LOGGER = LogManager.getLogger(MainImplWithBuilder.class);
 
-    private Scanner scanner;
+    private Scanner scanner; // todo must be input stream
     private TaskExecutor taskExecutor;
     private PrintStream outStream;
 
+    @Override
     public void runMain() {
         outStream.println("Enter task number: ");
         String taskNumberStr;
@@ -42,7 +44,7 @@ public class Main {
     }
 
     // create main only via builder
-    private Main(Builder mainBuilder) {
+    private MainImplWithBuilder(Builder mainBuilder) {
         this.taskExecutor = mainBuilder.getTaskExecutor();
         this.scanner = mainBuilder.getScanner();
         this.outStream = mainBuilder.getOutStream();
@@ -59,8 +61,8 @@ public class Main {
         private TaskExecutor taskExecutor = (TaskExecutor) TasksContext.getBean(BeanConstants.taskExecutor);
         private PrintStream outStream = System.out;
 
-        public Main build() {
-            return new Main(this);
+        public MainImplWithBuilder build() {
+            return new MainImplWithBuilder(this);
         }
 
         public Builder taskExecutor(TaskExecutor taskExecutor) {
