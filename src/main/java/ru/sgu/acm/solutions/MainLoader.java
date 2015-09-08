@@ -23,6 +23,8 @@ public class MainLoader {
 
     public static void main(String[] args) {
         //Main main = new MainImplBridge();
+        //Main main = new MainForAliasTask();
+        //Main main = new MainImplForFacade();
         Main main = new MainImplWithBuilder.Builder().scanner(scanner).outStream(out).taskExecutor(taskExecutor).build();
         main.runMain();
     }

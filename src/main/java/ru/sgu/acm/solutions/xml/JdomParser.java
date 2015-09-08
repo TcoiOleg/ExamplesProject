@@ -5,4 +5,7 @@ package ru.sgu.acm.solutions.xml;
  * Date: 29.07.15
  */
 public class JdomParser {
+    public void parseXml() {
+
+    }
 }
