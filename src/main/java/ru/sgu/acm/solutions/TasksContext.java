@@ -35,4 +35,9 @@ public class TasksContext {
         LOGGER.info("get Bean {} from xmlConfig.", beanName);
         return appContextFromXml.getBean(beanName);
     }
+
+    public static Object getBean(String beanName, Object ... args) {
+        LOGGER.info("get Bean {} from xmlConfig with constructor agrs", beanName);
+        return appContextFromXml.getBean(beanName, args);
+    }
 }
