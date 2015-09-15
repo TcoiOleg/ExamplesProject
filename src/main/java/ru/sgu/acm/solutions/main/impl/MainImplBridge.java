@@ -1,7 +1,7 @@
 package ru.sgu.acm.solutions.main.impl;
 
 import ru.sgu.acm.solutions.main.Main;
-import ru.sgu.acm.solutions.patterns.bridge.TaskExecutorBridgePattern;
+import ru.patterns.bridge.TaskExecutorBridgePattern;
 import ru.sgu.acm.solutions.task.taskimpls.RoundNumbersBinaryTaskImpl2007;
 
 import java.io.InputStream;

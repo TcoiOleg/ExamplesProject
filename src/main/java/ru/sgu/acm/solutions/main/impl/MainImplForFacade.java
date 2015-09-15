@@ -1,7 +1,7 @@
 package ru.sgu.acm.solutions.main.impl;
 
 import ru.sgu.acm.solutions.main.Main;
-import ru.sgu.acm.solutions.patterns.facade.Computer;
+import ru.patterns.facade.Computer;
 
 /**
  * User: 1

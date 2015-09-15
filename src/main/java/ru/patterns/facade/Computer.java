@@ -1,4 +1,4 @@
-package ru.sgu.acm.solutions.patterns.facade;
+package ru.patterns.facade;
 
 /**
  * User: 1

@@ -1,0 +1,1 @@
+see ru.interview.innerclasses.Human

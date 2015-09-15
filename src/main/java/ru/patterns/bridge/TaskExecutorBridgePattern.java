@@ -1,4 +1,4 @@
-package ru.sgu.acm.solutions.patterns.bridge;
+package ru.patterns.bridge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
