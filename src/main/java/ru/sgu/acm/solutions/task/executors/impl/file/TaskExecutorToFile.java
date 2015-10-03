@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import java.util.Map;
 import java.util.Scanner;
 
-import static ru.sgu.acm.solutions.task.executors.impl.file.FileCreatorUtils.getPrintStreamFromFile;
+import static ru.sgu.acm.solutions.task.executors.impl.file.utils.FileCreatorUtils.getPrintStreamFromFile;
 
 /**
  * User: 1

@@ -9,6 +9,7 @@ import java.util.Scanner;
 public abstract class TaskExecutor implements Cloneable {
     public abstract void executeTaskByNumber(Scanner scanner, int taskNumber);
 
+    // cloning for builder
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
