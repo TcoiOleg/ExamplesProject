@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class CraftyDigitsSumTaskImpl2018 implements Task {
     @Override
     public String execute(Scanner scanner) {
-        int n = scanner.nextInt(), i = 0, k = 1, sum = 0, temp = 1;
+     /*   int n = scanner.nextInt(), i = 0, k = 1, sum = 0, temp = 1;
         while (i < n) {
             if (i == k) {
                 k++;
@@ -19,6 +19,15 @@ public class CraftyDigitsSumTaskImpl2018 implements Task {
             }
             sum += scanner.nextInt() * temp;
             i++;
+        }
+        return String.valueOf(sum);*/
+        int n = scanner.nextInt(), i = 1, k = 2, d = 1, sum = 0;
+        while (n-- > 0) {
+            if (i-- == 0) {
+                i = k++;
+                d *= -1;
+            }
+            sum += scanner.nextInt() * d;
         }
         return String.valueOf(sum);
     }

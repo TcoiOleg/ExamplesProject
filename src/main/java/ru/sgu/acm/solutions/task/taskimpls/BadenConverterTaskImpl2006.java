@@ -11,8 +11,11 @@ import java.util.Scanner;
 public class BadenConverterTaskImpl2006 implements Task {
     @Override
     public String execute(Scanner scanner) {
-        String inputData = scanner.nextLine();
-        double lengthInCM = Double.parseDouble(inputData);
-        return String.valueOf((int)(lengthInCM / 36)) + " " + String.valueOf((int)(lengthInCM % 36 / 3));
+        int n = scanner.nextInt();
+        int foot = n / 36;
+        int ost = n % 36 % 3;
+        int dume = n % 36 / 3;
+        if (ost == 2) { dume++;}
+        return foot + " " + dume;
     }
 }
