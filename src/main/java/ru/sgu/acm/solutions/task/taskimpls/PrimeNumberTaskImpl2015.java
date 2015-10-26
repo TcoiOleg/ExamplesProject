@@ -21,8 +21,8 @@ public class PrimeNumberTaskImpl2015 implements Task {
         return ans.toString();
     }
 
-    private boolean isPrime(int digit) {
-        for (int i = 2; i < digit / 2; i++) {
+    private static boolean isPrime(int digit) {
+        for (int i = 2; i <= digit / 2; i++) {
             if (digit % i == 0) {
                 return false;
             }

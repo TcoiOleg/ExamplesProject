@@ -12,26 +12,35 @@ public class SearchInAnotherArrayTaskImpl2023 implements Task {
 
     @Override
     public String execute(Scanner scanner) {
-        int n = scanner.nextInt();
-        int mas[] = new int[n], mas2[];
-        while (n-- > 0) {
-            mas[n] = scanner.nextInt();
+        int n = scanner.nextInt(), i = 0;
+        int mas1[], mas2[];
+        mas1 = new int[n];
+        StringBuilder str = new StringBuilder("");
+        while (i < n) {
+            mas1[i++] = scanner.nextInt();
         }
         n = scanner.nextInt();
         mas2 = new int[n];
-        while (n-- > 0)
-        {
-            mas2[n] = scanner.nextInt();
+        i = 0;
+        while (i < n) {
+            mas2[i++] = scanner.nextInt();
         }
         n = 0;
-        StringBuilder str = new StringBuilder("\n");
-        for (int i = mas.length - 1; i >= 0; i--) {
-            for (int j = mas2.length - 1; j >=0; j--) {
-                if (mas[i] == mas2[j]) {
-                    str.append(mas[i]).append(" ");
-                }
+        for (int j = 0; j < mas1.length; j++) {
+            if (find(mas1[j], mas2)) {
+                str.append(mas1[j]).append(" ");
+                n++;
             }
         }
-        return String.valueOf(n) + str.toString();
+        return n + "\n" + str.toString();
+    }
+
+    public static boolean find(int target, int mas[]) {
+        for (int i = 0; i < mas.length; i++) {
+            if (target == mas[i]) {
+                return true;
+            }
+        }
+        return false;
     }
 }

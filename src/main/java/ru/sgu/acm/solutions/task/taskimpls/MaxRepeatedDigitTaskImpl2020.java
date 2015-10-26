@@ -11,16 +11,24 @@ import java.util.Scanner;
 public class MaxRepeatedDigitTaskImpl2020 implements Task {
     @Override
     public String execute(Scanner scanner) {
-        int n = scanner.nextInt(), cnt = 1, digit = scanner.nextInt(), temp;
-        while (n-- > 1) {
+        int n = scanner.nextInt(), prev = -1, temp, cnt = 0, maxCnt = -1111111111, dig = -11111;
+        if (n == 1) {
             temp = scanner.nextInt();
-            if (temp == digit) {
+            return temp + " 1";
+        }
+        while (n-- > 0) {
+            temp = scanner.nextInt();
+            if (temp == prev) {
                 cnt++;
             } else {
                 cnt = 1;
-                digit = temp;
+            }
+            prev = temp;
+            if (maxCnt < cnt) {
+                maxCnt = cnt;
+                dig = temp;
             }
         }
-        return String.valueOf(digit + " " + cnt);
+       return dig + " " + maxCnt;
     }
 }

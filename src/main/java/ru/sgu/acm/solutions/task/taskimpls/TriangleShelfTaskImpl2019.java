@@ -12,8 +12,8 @@ public class TriangleShelfTaskImpl2019 implements Task {
     @Override
     public String execute(Scanner scanner) {
         int n = scanner.nextInt(), sum = 1, shelfNumber = 1;
-        while (n != sum) {
-            sum += shelfNumber++;
+        while (n > sum) {
+            sum += ++shelfNumber;
         }
         return String.valueOf(shelfNumber);
     }
