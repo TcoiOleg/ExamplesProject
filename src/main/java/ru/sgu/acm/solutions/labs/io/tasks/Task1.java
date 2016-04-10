@@ -10,6 +10,13 @@ import java.util.Formatter;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/*
+1. В качестве параметров командной строки приложению
+передаются путь к файлу и символ. Приложение должно
+посчитать количество таких символов в файле и вывести
+эту информацию
+*/
+@SuppressWarnings("unused")
 public class Task1 {
 
     public void execute() throws IOException {
@@ -29,5 +36,6 @@ public class Task1 {
             }
         }
         System.out.println(new Formatter().format("The number of occurrences of a character '%s' is: %s", target, cnt));
+        bufferedReader.close();
     }
 }
