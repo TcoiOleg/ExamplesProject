@@ -12,7 +12,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(Arrays.toString(AP_1.new MergeTwo().mergeTwo(new String[]{"a", "c", "z"}, new String[]{"a", "c", "z"}, 3)));
+        System.out.println(AP_1.new CommonTwo().commonTwo(new String[]{"a", "a", "b", "b", "c"}, new String[]{"c", "c"}));
+        //System.out.println(Arrays.toString(AP_1.new MergeTwo().mergeTwo(new String[]{"a", "c", "z"}, new String[]{"a", "c", "z"}, 3)));
         //exec(scanner);
     }
 

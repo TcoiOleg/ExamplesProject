@@ -5,6 +5,47 @@ olts
  */
 public class AP1 {
 
+    public class CommonTwo {
+        public int commonTwo(String[] a, String[] b) {
+            int cnt = 0;
+            String prev = "";
+            int i = 0;
+            int j = 0;
+            while(true) {
+                while (i + 1 < a.length && (a[i].equals(a[i + 1]) || a[i].compareTo(b[j]) < 0)) {
+                    i++;
+                }
+                while (j + 1 < b.length && (b[j].equals(b[j + 1]) || b[j].compareTo(a[i]) < 0)) {
+                    j++;
+                }
+                if (i == a.length || j == b.length) {
+                    if (i == a.length) {
+                        return cnt + ((j < b.length && prev.equals(b[j])) ? 1 : 0);
+                    } else if (j == b.length) {
+                        return cnt + ((i < a.length && prev.equals(a[i])) ? 1 : 0);
+                    }
+                }
+                if (a[i].equals(b[j])) {
+                    cnt++;
+                    i++;
+                    j++;
+                    continue;
+                }
+                if (a[i].equals(prev)) {
+                    cnt++;
+                    prev = b[j];
+                } else if (b[j].equals(prev)) {
+                    cnt++;
+                    prev = a[i];
+                } else {
+                    prev = a[i].compareTo(b[j]) > 0 ? a[i] : b[j];
+                }
+                i++;
+                j++;
+            }
+        }
+    }
+
 /*Start with two arrays of strings, A and B, each with its elements in alphabetical order and without duplicates.
 Return a new array containing the first N elements from the two arrays. The result array should be in alphabetical
 order and without duplicates. A and B will both have a length which is N or more. The best "linear" solution makes
