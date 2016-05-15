@@ -1,6 +1,7 @@
 package ru.sgu.acm.solutions;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import ru.sgu.acm.solutions.task.executors.TaskExecutor;
 import ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl;
@@ -10,6 +11,7 @@ import ru.sgu.acm.solutions.task.executors.impl.TaskExecutorSOUTImpl;
  * Date: 28.07.15
  */
 @Configuration
+@ComponentScan(basePackages = "ru.sgu.acm.solutions.task.taskimpls")
 public class AppConfig {
 
     @Bean(name = BeanConstants.taskExecutor, initMethod = "fillTaskMap")

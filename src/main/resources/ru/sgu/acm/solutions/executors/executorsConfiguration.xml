@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
                          <!-- scope by default - singleton -->
-    <bean id="task1Bean" class="ru.sgu.acm.solutions.task.taskimpls.DigitSumTaskImpl2001" scope="prototype"/>
     <bean id="task2Bean" class="ru.sgu.acm.solutions.task.taskimpls.DigitNSumTaskImpl2002"/>
     <bean id="task3Bean" class="ru.sgu.acm.solutions.task.taskimpls.AlternateDigitSumTaskImpl2003"/>
     <bean id="task4Bean" class="ru.sgu.acm.solutions.task.taskimpls.LeapYearTaskImpl2004"/>
@@ -12,6 +12,8 @@
     <bean id="task7Bean" class="ru.sgu.acm.solutions.task.taskimpls.RoundNumbersBinaryTaskImpl2007"/>
 
     <alias name="task1Bean" alias="digitSumTaskImpl2001"/>
+
+    <context:component-scan base-package="ru.sgu.acm.solutions.task.taskimpls"/>
 
     <bean id="taskExecutorToFile" class="ru.sgu.acm.solutions.task.executors.impl.file.TaskExecutorToFile" lazy-init="true">
         <property name="taskMap">

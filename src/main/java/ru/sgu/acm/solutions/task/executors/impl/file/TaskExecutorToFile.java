@@ -32,6 +32,16 @@ public class TaskExecutorToFile extends TaskExecutor {
 
     public void setTaskMap(Map<String, Task> taskMap) {
         this.taskMap = taskMap;
+        if (LOGGER.isTraceEnabled()) {
+            logMap(taskMap);
+        }
+    }
+
+    private void logMap(Map<String, Task> taskMap) {
+        LOGGER.trace("Map: ");
+        for (Map.Entry<String, Task> e : taskMap.entrySet()) {
+            LOGGER.trace("e: {} | key {}", e.getKey(), e.getValue().getClass().getName());
+        }
     }
 
     public String getPathToOutput() {

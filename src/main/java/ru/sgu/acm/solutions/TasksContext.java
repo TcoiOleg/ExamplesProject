@@ -17,7 +17,7 @@ public class TasksContext {
 
     private static final String APP_CONTEXT_PATH = "app/applicationContext.xml";
     private static ApplicationContext appContextFromXml =
-            new ClassPathXmlApplicationContext(APP_CONTEXT_PATH);
+            new ClassPathXmlApplicationContext(APP_CONTEXT_PATH); // it's "soft coding" anti-pattern example. use instead literal "app/applicationContext.xml"
 
     private static ApplicationContext appContextFromAppConfig =
             new AnnotationConfigApplicationContext(AppConfig.class);

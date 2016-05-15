@@ -24,7 +24,7 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
     private Map<Integer, Class> tasksMap;
 
     public void fillTaskMap() {
-        LOGGER.trace("IN Filling task map.");
+        LOGGER.debug("IN Filling task map.");
         tasksMap = new HashMap<>();
         Set<Class<? extends Task>> tasks = new Reflections().getSubTypesOf(Task.class);
         tasks.forEach(taskClass -> {
@@ -35,7 +35,7 @@ public class TaskExecutorSOUTImpl extends TaskExecutor {
                 taskClass
              );
         });
-        LOGGER.trace("OUT Filling task map.");
+        LOGGER.debug("OUT Filling task map.");
     }
 
     public void executeTaskByNumber(Scanner scanner, int taskNumber) {
