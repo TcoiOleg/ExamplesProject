@@ -2,6 +2,7 @@ package ru.sgu.acm.solutions;
 
 
 import ru.sgu.acm.solutions.task.codingbat.AP1;
+import ru.sgu.acm.solutions.task.codingbat.Recursion2;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,7 +13,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(AP_1.new CommonTwo().commonTwo(new String[]{"a", "a", "b", "b", "c"}, new String[]{"c", "c"}));
+        System.out.println(new Recursion2().groupSum(0, new int[]{2, 4, 8}, 10));
+        //System.out.println(AP_1.new CommonTwo().commonTwo(new String[]{"a", "a", "b", "b", "c"}, new String[]{"c", "c"}));
         //System.out.println(Arrays.toString(AP_1.new MergeTwo().mergeTwo(new String[]{"a", "c", "z"}, new String[]{"a", "c", "z"}, 3)));
         //exec(scanner);
     }
