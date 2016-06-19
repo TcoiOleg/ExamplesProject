@@ -17,4 +17,12 @@ public class HelloWorldExampleServlet extends HttpServlet {
         out.print(", using the GET method");
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.print("This is ");
+        out.print(this.getClass().getName());
+        out.print(", using the POST method");
+    }
 }

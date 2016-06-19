@@ -8,10 +8,32 @@
         <servlet-name>HelloWorldExample</servlet-name>
         <servlet-class>ru.webexamples.web.servlet.HelloWorldExampleServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FormSendExample</servlet-name>
+        <servlet-class>ru.webexamples.web.servlet.SendFormExampleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SynchroExample</servlet-name>
+        <servlet-class>ru.webexamples.web.servlet.StringSynchroExampleServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>HelloWorldExample</servlet-name>
-        <url-pattern>/oltsservlets/servlet/HelloWorldExample</url-pattern>
+        <url-pattern>/serv</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FormSendExample</servlet-name>
+        <url-pattern>/sendForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SynchroExample</servlet-name>
+        <url-pattern>/synchroexample</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
