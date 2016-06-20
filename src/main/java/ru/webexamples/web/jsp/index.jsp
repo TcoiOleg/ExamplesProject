@@ -7,10 +7,13 @@
 </FORM>
 <ul class="list">
     <li class="list__item">
-        <a href="example.jsp">Send form example</a>
+        <a href="example.jsp">Send form page</a>
     </li>
     <li class="list__item">
-        <a href="synchroexample">Synchro form example</a>
+        <a href="synchroexample">Synchro example</a>
+    </li>
+    <li class="list__item">
+        <a href="sendmail.jsp">Send mail page</a>
     </li>
 </ul>
 </body></html>
