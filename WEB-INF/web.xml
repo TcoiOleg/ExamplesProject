@@ -18,8 +18,18 @@
     </servlet>
     <servlet>
         <servlet-name>SendMailExampl</servlet-name>
-        <servlet-class>ru.webexamples.web.servlet.SendMailServlet</servlet-class>
+        <servlet-class>ru.webexamples.web.servlet.SendMailExampleServlet</servlet-class>
+        <init-param>
+            <param-name>mail.smtphost</param-name>
+            <param-value>mail.attbi.com</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mail.smtpport</param-name>
+            <param-value>25</param-value>
+        </init-param>
     </servlet>
+
+    <!-- MAPPING -->
 
     <servlet-mapping>
         <servlet-name>HelloWorldExample</servlet-name>
