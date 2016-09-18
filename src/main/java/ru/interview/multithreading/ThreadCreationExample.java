@@ -10,6 +10,6 @@ public class ThreadCreationExample implements Example {
     @Override
     public void runMain() {
         Thread thread = new Thread(() -> System.out.println("Hi, i am thread!"));
-        thread.run();
+        thread.start();
     }
 }

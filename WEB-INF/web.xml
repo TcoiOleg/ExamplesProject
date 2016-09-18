@@ -29,7 +29,12 @@
         </init-param>
     </servlet>
 
-    <!-- MAPPING -->
+    <servlet>
+        <servlet-name>ArrayExapleServlet</servlet-name>
+        <servlet-class>ru.webexamples.web.servlet.ArrayExampleServlet</servlet-class>
+    </servlet>
+
+    <!-- START Mapping -->
 
     <servlet-mapping>
         <servlet-name>HelloWorldExample</servlet-name>
@@ -50,6 +55,13 @@
         <servlet-name>SendMailExampl</servlet-name>
         <url-pattern>/sendmail</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ArrayExapleServlet</servlet-name>
+        <url-pattern>/array</url-pattern>
+    </servlet-mapping>
+
+    <!-- END Mapping -->
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
