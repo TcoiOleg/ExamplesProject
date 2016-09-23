@@ -16,6 +16,7 @@
         <a href="sendmail.jsp">Send mail page</a>
     </li>
     <%= JspUtils.createServletExampleListItem("arrayExample.jsp", "Massive page") %>
+    <%= JspUtils.createServletExampleListItem("jstlexamples/page.jspx", "DSSSSSSSS page") %>
 </ul>
 <%@ page import="ru.webexamples.web.jsp.utils.JspUtils " %>
 </body></html>

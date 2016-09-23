@@ -16,7 +16,7 @@ public class ArrayExampleServlet extends HttpServlet {
     }
 
     private String sort(String str) {
-        Collection<Integer> set = new HashSet<>();
+        Collection<Integer> set = new TreeSet<>();
         Arrays.asList(str.split(",")).forEach(new Consumer<String>() {
             @Override
             public void accept(String s) {
