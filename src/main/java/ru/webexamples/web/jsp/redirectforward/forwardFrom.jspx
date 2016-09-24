@@ -1,0 +1,21 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          version="2.0">
+<html>
+<head>
+    <title>JSP forward example with parameters</title>
+</head>
+<body>
+<c:set var="login" value="gv" scope="page"/>
+<c:out value="${login} in Rio"/>
+<c:if test="${login == 'gv'}">
+    <jsp:forward page="forwardTo.jsp">
+        <jsp:param name="name" value="Chaitanya" />
+        <jsp:param name="site" value="BeginnersBook.com" />
+        <jsp:param name="tutorialname" value="jsp forward action" />
+        <jsp:param name="reqcamefrom" value="forwardFrom.jspx" />
+    </jsp:forward>
+</c:if>
+</body>
+</html>
+</jsp:root>
