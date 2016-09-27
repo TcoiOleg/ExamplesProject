@@ -15,6 +15,9 @@ public class HelloWorldExampleServlet extends HttpServlet {
         out.print("This is ");
         out.print(this.getClass().getName());
         out.print(", using the GET method");
+        Object insane = getServletContext().getAttribute("insane");
+        out.print(insane.toString());
+        throw new ServletException(insane.toString());
     }
 
     @Override

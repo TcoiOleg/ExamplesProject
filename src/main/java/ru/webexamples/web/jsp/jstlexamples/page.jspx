@@ -5,6 +5,7 @@
 <html><head>
     <title>Демонстрация тегов core</title>
 </head>
+<h2>HI <jsp:expression> request.getRemoteAddr() </jsp:expression></h2>
 <h3>Демонстрация работы тегов <br/>c:forEach, c:choose,
     c:when, c:otherwise</h3>
 <jsp:text>Ниже приведены случайно сгенерированные элементы

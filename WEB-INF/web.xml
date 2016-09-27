@@ -34,6 +34,11 @@
         <servlet-class>ru.webexamples.web.servlet.ArrayExampleServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>StartupServlet</servlet-name>
+        <servlet-class>ru.webexamples.web.servlet.StartupServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
     <!-- START Mapping -->
 
     <servlet-mapping>
@@ -61,6 +66,10 @@
         <url-pattern>/array</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>StartupServlet</servlet-name>
+        <url-pattern>/start</url-pattern>
+    </servlet-mapping>
     <!-- END Mapping -->
     <filter>
         <filter-name>FilterExa</filter-name>
@@ -74,10 +83,19 @@
     <filter-mapping>
         <filter-name>FilterExa</filter-name>
         <servlet-name>ArrayExapleServlet</servlet-name>
-</filter-mapping>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>ru.webexamples.web.listeners.SerlvetContextListnenerEx</listener-class>
+    </listener>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
 
 </web-app>
