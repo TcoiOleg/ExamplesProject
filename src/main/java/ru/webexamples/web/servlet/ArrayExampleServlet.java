@@ -3,6 +3,7 @@ package ru.webexamples.web.servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
@@ -13,6 +14,7 @@ public class ArrayExampleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String txtArray = req.getParameter("txtArray");
         resp.getOutputStream().print(sort(txtArray));
+        HttpServletRequestWrapper httpServletRequestWrapper = new HttpServletRequestWrapper(req);
     }
 
     private String sort(String str) {

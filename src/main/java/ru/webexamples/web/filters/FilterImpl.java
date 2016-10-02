@@ -28,6 +28,8 @@ public class FilterImpl implements Filter
         chain.doFilter(request, response);
     }
 
+
+
     public void destroy()
     {
         config = null;

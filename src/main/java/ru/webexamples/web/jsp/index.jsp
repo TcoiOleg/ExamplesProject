@@ -20,5 +20,5 @@
     <%= JspUtils.createServletExampleListItem("redirectforward/forwardFrom.jspx", "FORWARD page") %>
     <%= JspUtils.createServletExampleListItem("redirectforward/redirect.jsp", "REFIRECT page") %>
 </ul>
-<%@ page import="ru.webexamples.web.jsp.utils.JspUtils " %>
+<%@ page import="ru.webexamples.web.utils.JspUtils " %>
 </body></html>

@@ -1,6 +1,9 @@
 package ru.webexamples.web.servlet;
 
 
+import ru.webexamples.app.AppContext;
+import ru.webexamples.app.Hello;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,5 +24,7 @@ public class StartupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getOutputStream().print("Servlet and server started at: " + date.toString());
+        resp.getOutputStream().print(AppContext.<Hello>getBean("hah").getHaha());
+        resp.getOutputStream().print("s");
     }
 }
