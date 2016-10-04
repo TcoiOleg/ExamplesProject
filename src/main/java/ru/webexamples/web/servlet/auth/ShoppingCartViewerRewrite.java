@@ -1,12 +1,14 @@
 package ru.webexamples.web.servlet.auth;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@WebServlet(urlPatterns = {"/servlet/ShoppingCart/*"})
 public class ShoppingCartViewerRewrite extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -42,7 +44,7 @@ public class ShoppingCartViewerRewrite extends HttpServlet {
         // Ask if the user wants to add more items or check out.
         // Include the session ID in the action URL.
         out.println("<FORM ACTION=\"/servlet/ShoppingCart/" + sessionid +
-                "\" METHOD=POST>");
+                "\" METHOD=GET>");
         out.println("Would you like to<BR>");
         out.println("<INPUT TYPE=submit VALUE=\" Add More Items \">");
         out.println("<INPUT TYPE=submit VALUE=\" Check Out \">");
