@@ -7,5 +7,5 @@
     <input type="text" name="txtArray" value="">
     <input type="submit" value="Принять"> <BR>
 </form>
-<%@ page import="ru.webexamples.web.jsp.utils.JspUtils.Constants" %>
+<%@ page import="ru.webexamples.web.utils.JspUtils.Constants" %>
 </body></html>

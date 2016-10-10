@@ -1,5 +1,7 @@
 package ru.webexamples.web.servlet.login;
 
+import ru.webexamples.web.listeners.User;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 
         if(userID.equals(user) && password.equals(pwd)){
             HttpSession session = request.getSession();
-            session.setAttribute("user", "OEE");
+            session.setAttribute("user", new User());
             //setting session to expiry in 30 mins
             session.setMaxInactiveInterval(30*60);
             Cookie userName = new Cookie("user", user);

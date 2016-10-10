@@ -13,7 +13,13 @@ public class ArrayExampleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String txtArray = req.getParameter("txtArray");
-        resp.getOutputStream().print(sort(txtArray));
+        resp.getOutputStream().println(sort(txtArray));
+        Object user = req.getSession().getAttribute("user");
+        if (user == null) {
+            resp.getOutputStream().println("Session currently opened between client and server, but not Logged!");
+        } else {
+            resp.getOutputStream().println("Session opened between client and server, User:" + user.toString());
+        }
         HttpServletRequestWrapper httpServletRequestWrapper = new HttpServletRequestWrapper(req);
     }
 

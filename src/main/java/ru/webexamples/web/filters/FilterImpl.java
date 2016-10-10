@@ -21,9 +21,8 @@ public class FilterImpl implements Filter
                           FilterChain chain) throws IOException,
             ServletException
     {
-        if (active)
-        {
-            response.getOutputStream().print("FILTER ENABLED: active mafaka\n");
+        if (active) {
+            response.getOutputStream().print("FILTER ENABLED: javax.servlet.Filter used for filtering responses. \n");
         }
         chain.doFilter(request, response);
     }
