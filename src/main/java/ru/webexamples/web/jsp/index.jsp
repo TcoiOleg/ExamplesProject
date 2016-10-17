@@ -16,10 +16,12 @@
         <a href="sendmail.jsp">Send mail page</a>
     </li>
     <%= JspUtils.createServletExampleListItem("arrayExample.jsp", "Massive page") %>
-    <%= JspUtils.createServletExampleListItem("jstlexamples/page.jspx", "DSSSSSSSS page") %>
+    <%= JspUtils.createServletExampleListItem("jstlexamples/page.jspx", "JSTL examples page") %>
     <%= JspUtils.createServletExampleListItem("redirectforward/forwardFrom.jspx", "FORWARD page") %>
     <%= JspUtils.createServletExampleListItem("redirectforward/redirect.jsp", "REFIRECT page") %>
     <%= JspUtils.createServletExampleListItem("/login.html", "Login page") %>
 </ul>
 <%@ page import="ru.webexamples.web.utils.JspUtils " %>
+<%@ taglib prefix="ex" uri="http://jsp/oltctags" %>
+<ex:Hello/>
 </body></html>
