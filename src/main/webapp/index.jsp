@@ -23,5 +23,7 @@
 </ul>
 <%@ page import="ru.webexamples.web.utils.JspUtils " %>
 <%@ taglib prefix="ex" uri="http://jsp/oltctags" %>
-<ex:Hello/>
+<ex:Hello>
+    fdfs
+</ex:Hello>
 </body></html>

@@ -9,6 +9,9 @@
     <tag>
         <name>Hello</name>
         <tag-class>ru.webexamples.web.jsptags.HelloTag</tag-class>
-        <body-content>empty</body-content>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>message</name>
+        </attribute>
     </tag>
 </taglib>
