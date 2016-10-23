@@ -3,8 +3,6 @@ package ru.webexamples.web.servlet.wrappers;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import ru.webexamples.app.AppContext;
-import ru.webexamples.app.api.serialization.SerializationFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
@@ -13,7 +11,7 @@ import java.io.IOException;
 
 public class JsonRequestWrapper extends HttpServletRequestWrapper {
 
-    private SerializationFactory serializationFactory = AppContext.<SerializationFactory>getBean("serializationFactory");
+    //private SerializationFactory serializationFactory = AppContext.<SerializationFactory>getBean("serializationFactory");
 
     public JsonRequestWrapper(HttpServletRequest request) {
         super(request);

@@ -250,6 +250,9 @@
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource><directory>src/main/resources/webapps/web</directory></resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -258,6 +261,13 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
                 </configuration>
             </plugin>
         </plugins>

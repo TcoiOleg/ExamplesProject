@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class WebContext {
     private static ApplicationContext appContextFromXml =
-            new ClassPathXmlApplicationContext("webapps/web/webContext.xml");
+            new ClassPathXmlApplicationContext("/webContext.xml");
 
     public static <T> T getBean(String beanName) {
         return (T) appContextFromXml.getBean(beanName);
