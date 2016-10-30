@@ -1,6 +1,8 @@
 package ru.webexamples.web.filters;
 
 
+import ru.webexamples.web.utils.JspUtils;
+
 import javax.servlet.*;
 import java.io.IOException;
 
@@ -24,6 +26,12 @@ public class FilterImpl implements Filter
         if (active) {
             response.getOutputStream().print("FILTER ENABLED: javax.servlet.Filter used for filtering responses. \n");
         }
+        if (response.getContentType() == null) {
+            response.setContentType("text/html");
+        }
+        response.getOutputStream().println("<html><body><ul class=\"list\">" +
+                JspUtils.createServletExampleListItem("index.jsp", "back") +
+                "</ul></body></html>");
         chain.doFilter(request, response);
     }
 
