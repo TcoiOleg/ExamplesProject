@@ -16,6 +16,6 @@ public class Main {
         List<Example> examples = new ArrayList<>();
         examples.add(new InnerClassesExample());
         examples.add(new ThreadCreationExample());
-        examples.forEach(example -> System.out.println("IN"));
+        examples.forEach(Example::runMain);
     }
 }
