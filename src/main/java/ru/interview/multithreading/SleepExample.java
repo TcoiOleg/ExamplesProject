@@ -1,6 +1,6 @@
 package ru.interview.multithreading;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * o.tsoy
@@ -24,7 +24,7 @@ public class SleepExample {
                 e.printStackTrace();
             }
             //Print a message
-            System.out.println(anImportantInfo + " " + LocalDateTime.now());
+            System.out.println(anImportantInfo + " " + LocalTime.now());
         }
     }
 
